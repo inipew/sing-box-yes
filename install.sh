@@ -74,7 +74,7 @@ function LOGD() {
 
 confirm() {
     if [[ $# > 1 ]]; then
-        echo && read -p "$1 [Default$2]: " temp
+        echo && read -p "$1 [Default $2]: " temp
         if [[ x"${temp}" == x"" ]]; then
             temp=$2
         fi
@@ -559,7 +559,7 @@ show_log() {
     if [[ $? == ${SING_BOX_STATUS_NOT_RUNNING} ]]; then
         journalctl -u sing-box.service -e --no-pager -f
     else
-        confirm "Confirm whether logging is enabled in the configuration, which is enabled by default" "y"
+        confirm "Confirm whether logging is enabled in the configuration, which is enabled by default " "y"
         if [[ $? -ne 0 ]]; then
             LOGI "Will read logs from console:"
             journalctl -u sing-box.service -e --no-pager -f
