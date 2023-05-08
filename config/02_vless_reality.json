@@ -16,7 +16,7 @@
       ],
       "tls": {
         "enabled": true,
-        "server_name": ["clients5.google.com"],
+        "server_name": "clients5.google.com",
         "reality": {
           "enabled": true,
           "handshake": {
