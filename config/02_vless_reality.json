@@ -1,0 +1,32 @@
+{
+  "inbounds": [
+    {
+      "type": "vless",
+      "tag": "VLESSREALITY",
+      "listen": "::",
+      "listen_port": 18443,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only",
+      "users": [
+        {
+          "uuid": "eca1e11a-9ffb-4189-a0e2-9eb2e520b995",
+          "flow": "xtls-rprx-vision"
+        }
+      ],
+      "tls": {
+        "enabled": true,
+        "server_name": ["clients5.google.com"],
+        "reality": {
+          "enabled": true,
+          "handshake": {
+            "server": "aus.xzvf.site",
+            "server_port": 443
+          },
+          "private_key": "IPXtLMqerx3j2EXWPNVOvYlEi7rnpD_pJjZqPlZlTFA",
+          "short_id": [""]
+        }
+      }
+    }
+  ]
+}
