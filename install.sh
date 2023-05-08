@@ -302,8 +302,11 @@ download_config() {
         wget --no-check-certificate -O ${CONFIG_FILE_PATH}/00_log.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/00_log.json
         wget --no-check-certificate -O ${CONFIG_FILE_PATH}/01_vless_xtls_vision.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/01_vless_xtls_vision.json
         wget --no-check-certificate -O ${CONFIG_FILE_PATH}/02_vless_reality.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/02_vless_reality.json
+        wget --no-check-certificate -O ${CONFIG_FILE_PATH}/03_trojan_tcp_tls.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/03_trojan_tcp_tls.json
         wget --no-check-certificate -O ${CONFIG_FILE_PATH}/09_routing.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/09_routing.json
         wget --no-check-certificate -O ${CONFIG_FILE_PATH}/10_ipv4_outbouds.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/10_ipv4_outbouds.json
+        wget --no-check-certificate -O ${CONFIG_FILE_PATH}/11_dns.json https://raw.githubusercontent.com/inipew/sing-box-yes/main/config/11_dns.json
+
         if [[ $? -ne 0 ]]; then
             LOGE "Failed to download sing-box configuration, please check network"
             exit 1
@@ -325,8 +328,11 @@ backup_config() {
         mv ${CONFIG_FILE_PATH}/00_log.json ${CONFIG_BACKUP_PATH}/00_log.json.bak
         mv ${CONFIG_FILE_PATH}/01_vless_xtls_vision.json ${CONFIG_BACKUP_PATH}/01_vless_xtls_vision.json.bak
         mv ${CONFIG_FILE_PATH}/02_vless_reality.json ${CONFIG_BACKUP_PATH}/02_vless_reality.json.bak
+        mv ${CONFIG_FILE_PATH}/03_trojan_tcp_tls.json ${CONFIG_BACKUP_PATH}/03_trojan_tcp_tls.json.bak
         mv ${CONFIG_FILE_PATH}/09_routing.json ${CONFIG_BACKUP_PATH}/09_routing.json.bak
         mv ${CONFIG_FILE_PATH}/10_ipv4_outbouds.json ${CONFIG_BACKUP_PATH}/10_ipv4_outbouds.json.bak
+        mv ${CONFIG_FILE_PATH}/11_dns.json ${CONFIG_BACKUP_PATH}/11_dns.json.bak
+
     fi
     LOGD "Backup sing-box configuration file completed"
 }
@@ -341,8 +347,10 @@ restore_config() {
         mv ${CONFIG_FILE_PATH}/00_log.json.bak ${CONFIG_BACKUP_PATH}/00_log.json
         mv ${CONFIG_FILE_PATH}/01_vless_xtls_vision.json.bak ${CONFIG_BACKUP_PATH}/01_vless_xtls_vision.json
         mv ${CONFIG_FILE_PATH}/02_vless_reality.json.bak ${CONFIG_BACKUP_PATH}/02_vless_reality.json
+        mv ${CONFIG_FILE_PATH}/03_trojan_tcp_tls.json ${CONFIG_BACKUP_PATH}/03_trojan_tcp_tls.json.bak
         mv ${CONFIG_FILE_PATH}/09_routing.json.bak ${CONFIG_BACKUP_PATH}/09_routing.json
         mv ${CONFIG_FILE_PATH}/10_ipv4_outbouds.json.bak ${CONFIG_BACKUP_PATH}/10_ipv4_outbouds.json
+        mv ${CONFIG_FILE_PATH}/11_dns.json.bak ${CONFIG_BACKUP_PATH}/11_dns.json
     fi
     LOGD "Restoring the sing-box configuration file is complete"
 }
